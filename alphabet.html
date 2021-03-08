@@ -18,13 +18,18 @@
         A
     </div>
     <script>
-        $(document).keydown(function(event) {
+        function changeAlpha() {
             var arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+            var num = Math.random() * arr.length;
+            var alpha = arr[Math.floor(num)];
+            $("#divShow").html(alpha.toUpperCase());
+        }
+        $(document).keydown(function(event) {
             if(event.which == 32) {
-                var num = Math.random() * arr.length;
-                var alpha = arr[Math.floor(num)];
-                $("#divShow").html(alpha.toUpperCase());
+                changeAlpha();
             }
+        }).click(function() {
+            changeAlpha();
         })
     </script>
 </body>
