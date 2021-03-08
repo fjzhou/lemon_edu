@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://static.cnool.net/js/jquery.min.js"></script>
+    <style type="text/css">
+        .alphabet {
+            font-size:200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="divShow" class="alphabet">
+        A
+    </div>
+    <script>
+        $(document).keydown(function(event) {
+            var arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+            if(event.which == 32) {
+                var num = Math.random() * arr.length;
+                var alpha = arr[Math.floor(num)];
+                $("#divShow").html(alpha.toUpperCase());
+            }
+        })
+    </script>
+</body>
+</html>
